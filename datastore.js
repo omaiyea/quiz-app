@@ -82,31 +82,41 @@ the results aiming to support or contradict a theory" (<a href="https://www.live
     and by precipitation from solution" (<a href="https://www.sciencedaily.com/terms/sedimentary_rock.htm" target="_blank">source</a>).</p>`},
     {question: "Which of the following are carbohydrates?",
     potentialAnswers: ["Monosaccharides", "Disaccharides", "Both monosaccharides and disaccharides", "Neither monosaccharides nor disaccharides"],
-    correctAnswerIndex: 2, explanation: `<p>update.</p>`},
+    correctAnswerIndex: 2, explanation: `<p>Monosaccharides and disaccharides are examples of carbohydrates. Carbohydrates are an energy source
+    for your body. These two are some of the smaller examples of carbohydrates (<a href="https://www.rsc.org/Education/Teachers/Resources/cfb/carbohydrates.htm" target="_blank">source</a>).</p>`},
     {question: "What is photosynthesis?",
     potentialAnswers: ["The process in which plants die", "The process in which plants synthesize food", "How pictures were processed before camera phones", "The process in which plants reproduce"],
-    correctAnswerIndex: 1, explanation: `<p>https://www.bbc.com/bitesize/articles/zn4sv9q</p>`},
+    correctAnswerIndex: 1, explanation: `<p>Plants are able to make their own food using photosynthesis. 
+    This chemical process requires light, carbon dioxide, and water and takes place in the leaves of a plant (<a href="https://www.bbc.com/bitesize/articles/zn4sv9q">source</a>).</p>`},
     {question: "Which organ is responsible for detoxifying chemicals?",
     potentialAnswers: ["Liver", "Large Intestine", "Heart", "None - you need a detox tea"],
     correctAnswerIndex: 0, explanation: `<p>It's the liver. And the liver does even more than your every day detox! In fact, 
     "the liver's main job is to filter the blood coming from the digestive tract, before passing it to the 
     rest of the body. The liver also detoxifies chemicals and metabolizes drugs... The liver also makes proteins important for blood 
-    clotting and other functions." (<a href=”https://www.webmd.com/digestive-disorders/picture-of-the-liver#1”>source</a>)</p>`},
+    clotting and other functions." (<a href=”https://www.webmd.com/digestive-disorders/picture-of-the-liver#1” target="_blank">source</a>).</p>`},
     {question: "Which elements are in the chemical formula H2O?",
     potentialAnswers: ["Helium and oxygen", "Hydrogen and oxygen", "Helium and Oganesson", "Hydrogen and Oganesson"],
-    correctAnswerIndex: 1, explanation: `<p>https://en.wikipedia.org/wiki/H2O_(disambiguation)</p>`},
+    correctAnswerIndex: 1, explanation: `<p>"H2O is the chemical formula for water, ice, or steam which consists of 
+    two atoms of hydrogen and one atom of oxygen" (<a href="https://en.wikipedia.org/wiki/H2O_(disambiguation) target="_blank">source</a>).</p>`},
     {question: "In physics, which form of energy describes an object in motion?",
-    potentialAnswers: ["Motion Energy", "Potential Energy", "Kinetic Energy", "Active Energy"],
-    correctAnswerIndex: 2, explanation: `<p>https://www.britannica.com/science/kinetic-energy</p>`},
+    potentialAnswers: ["Motion Energy", "Potential Energy", "Kinetic Energy", "Electrical Energy"],
+    correctAnswerIndex: 2, explanation: `<p>Kinetic energy describes the energy an object has while it's in motion. 
+    "If work, which transfers energy, is done on an object by applying a net force, the object speeds up and 
+    thereby gains kinetic energy" (<a href="https://www.britannica.com/science/kinetic-energy" target="_blank">source</a>).</p>`},
     {question: "Which is NOT a result of deforestation?",
     potentialAnswers: ["Soil erosion", "Negative impact to carbon cycle", "An increase in trees", "Displacement of people"],
-    correctAnswerIndex: 2, explanation: `<p>Deforestation actually means cutting down trees. https://www.livescience.com/27692-deforestation.html</p>`},
+    correctAnswerIndex: 2, explanation: `<p>The definition of deforestation is "the permanent desctruction of forests in order to make the
+    land available for other uses." Its negative impacts are not just environmental (tree roots prevent soil from blowing away, 
+    trees contain carbon dioxide which is released when they die, among others) but also social since communities may live in the areas 
+    deforestation happens (<a href="https://www.livescience.com/27692-deforestation.html" target="_blank">source</a></p>).`},
     {question: "Which of the following are lab safety rules you'll find in a chemistry lab?",
     potentialAnswers: ["Use safety goggles", "Wear gloves", "Avoid open toed shoes", "All of the above"],
-    correctAnswerIndex: 3, explanation: `<p>https://ehs.stonybrook.edu/programs/laboratory-safety/lab-safety-guide</p>`},
+    correctAnswerIndex: 3, explanation: `<p>The most correct answer is that all of these rules (and more) are important to keep in 
+    mind in a chemistry lab, depending on the experiment taking place (<a href="https://ehs.stonybrook.edu/programs/laboratory-safety/lab-safety-guide" target="_blank">source</a>).</p>`},
     {question: "Which of the following would be the most basic pH?",
     potentialAnswers: ["3", "7", "10", "Me"],
-    correctAnswerIndex: 2, explanation: `<p></p>`},
+    correctAnswerIndex: 2, explanation: `<p>pH describes how acidic or basic a solution is. More acidic solutions have a lower
+    pH and more basic or alkaline solutions have a higher pH. A pH of 7 indicate a neutral solution (<a href="https://simple.wikipedia.org/wiki/PH" target="_blank">source</a>).</p>`},
 ]
 
 //variables when quiz is complete
