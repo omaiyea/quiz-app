@@ -1,8 +1,10 @@
-//this file stores the variables that will be used for this quiz app
+/////this file stores the variables that will be used for this quiz app/////
 
-const MAX_QUESTIONS = 10;
+//business rules of number of questions and answers available in quiz
+const MAX_QUESTIONS = 10; //could also set this based on the number of elements in array of QUESTIONS_AND_ANSWERS in case questions are added/removed
+const MAX_ANSWERS = 4;
 
-//variables for home screen
+//home screen
 const HEADER_IMAGE = `<i class="fas fa-flask fa-5x" id="headerImg" alt="flask icon"></i>`;
 const WELCOME_MESSAGE = `
 <p>Whether you're taking an intro level science class now or 
@@ -14,50 +16,16 @@ const START_BUTTON = `<form class="js-next-question">
 <input type="submit" value="Start Quiz"/>
 </form>`;
 
-//variables for quiz status counts 
-let QUESTION_COUNT = 1;  // what question user is on
-let QUESTIONS_RIGHT = 0; // how many questions user got right
+//quiz status counts 
+//defined here but set in index.js to keep counts accurate
+let QUESTION_COUNT;  // what question user is on
+let QUESTIONS_RIGHT; // how many questions user got right
 
-//variables for questions and answers
+//button to iterate through next question and land on final screen
 const NEXT_BUTTON = `<form class="js-next-question"><input type="submit" value="Next Question"></form>`;
 
-/*//NOTE: any change to a question or answer may require a change in all three data structures below
-//is it better to use one data structure for both questions and answers or separate them like this? 
-//
-
-//array of objects for questions
-const QUESTIONS = [
-    {qid: 1, question: "Which of the following is a step in the scientific method?"},
-    {qid: 2, question: "Name one of the main rock classifications."}
-  //  {qid: 2, question: "Which of the following are carbohydrates?", correctAnswer: "C"}
-]
-
-//array of objects to store potential answers
-//qid corresponds to question
-const POSSIBLE_ANSWERS = [
-    {qid: 1, aid: "A", answer: "Make an observation"}, 
-    {qid: 1, aid: "B", answer: "Form a hypothesis"},
-    {qid: 1, aid: "C", answer: "Iterate on your hypothesis based on the results of a reproducible experiment"},
-    {qid: 1, aid: "D", answer: "All of the above"}, 
-    {qid: 2, aid: "A", answer: "The Beatles"}, 
-    {qid: 2, aid: "B", answer: "Sedimentary"},
-    {qid: 2, aid: "C", answer: "Sedentary"},
-    {qid: 2, aid: "D", answer: "Geodude"}, 
-]
-
-const CORRECT_ANSWER = [
-    {qid: 1, aid: "A", 
-    explanation: `<p>All of these steps (and more) are involved in the scientific method. 
-    As a refresher, the scientific method is "[a] method to collect measurable, 
-    empirical evidence in an experiment related to a hypothesis... 
-    the results aiming to support or contradict a theory" (<a href="https://www.livescience.com/20896-science-scientific-method.html" target="_blank">source</a>).</p>`}, 
-    {qid: 2, aid: "B",
-    explanation: `<p>There are three major rock classifications, and sedimentary is one 
-    of them. Sedimentary rocks are formed by four main processes "by the deposition of the weathered 
-    remains of other rocks (known as 'clastic' sedimentary rocks); by the accumulation and 
-    the consolidation of sediments; by the deposition of the results of biogenic activity; 
-    and by precipitation from solution". <a href="https://www.sciencedaily.com/terms/sedimentary_rock.htm" target="_blank">source</a>).</p>`}
-]*/
+//button to redo quiz
+const REDO_BUTTON = `<form class="js-redo-quiz"><input type="submit" value="Redo Quiz" onclick="reloadPage();"></form>`;
 
 //array of objects to store questions and answers
 
@@ -108,7 +76,7 @@ the results aiming to support or contradict a theory" (<a href="https://www.live
     correctAnswerIndex: 2, explanation: `<p>The definition of deforestation is "the permanent desctruction of forests in order to make the
     land available for other uses." Its negative impacts are not just environmental (tree roots prevent soil from blowing away, 
     trees contain carbon dioxide which is released when they die, among others) but also social since communities may live in the areas 
-    deforestation happens (<a href="https://www.livescience.com/27692-deforestation.html" target="_blank">source</a></p>).`},
+    deforestation happens (<a href="https://www.livescience.com/27692-deforestation.html" target="_blank">source</a>).</p>`},
     {question: "Which of the following are lab safety rules you'll find in a chemistry lab?",
     potentialAnswers: ["Use safety goggles", "Wear gloves", "Avoid open toed shoes", "All of the above"],
     correctAnswerIndex: 3, explanation: `<p>The most correct answer is that all of these rules (and more) are important to keep in 
