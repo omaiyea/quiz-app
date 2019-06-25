@@ -1,0 +1,59 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+/*make the text bigger otherwise I and other users can't read anything*/
+h2{
+    font-size: 2.5em;
+}
+h3{
+    font-size: 2em;
+}
+p, input, label{
+    font-size: 1.5em;
+}
+
+/*button syling but it's not working*/
+input[type=submit]{
+    width: 200px;
+    height: 500px;
+    font-size: 2em;
+}
+
+/*make the header/quiz status text take up oppsite sides of the screen*/
+.question-status{
+    display: flex;  
+    flex-direction: row; 
+    justify-content: space-between;
+    list-style: none;
+    padding:20px 10px;
+}
+
+.question-status li{
+    display: inline-block;
+}
+
+/*center the questions and answers section and don't take up the whole screen*/
+.questions-and-answers{
+    margin: auto;
+    width: 75%;
+    padding: 50px 0px;
+}
+
+/*center the headings in the questions */ 
+.questions-and-answers h2, h3, p{
+    text-align: center;
+}
+
+/*center the button. could do this and the above in the questions-and-answers class,
+but then the li would be centered, which doesn't look good*/
+input[type=submit]{
+    display: block;
+    margin: auto;
+}
+
+#headerImg{
+    display: inline-block;
+    text-align: center;
+    width: 100%; /*it won't center unless I do this?*/
+}
+
