@@ -1,56 +1,84 @@
 * {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    color: #2b2b2b;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
 /*make the text bigger for ease of reading*/
 h2{
     font-size: 2.5em;
+    font-weight: 1000;
 }
 h3{
     font-size: 2em;
+    font-weight: 1000;
 }
 p, input, label{
     font-size: 1.5em;
 }
 
-/*button syling but it's not working*/
-input[type=submit]{
-    width: 200px;
-    height: 500px;
-    font-size: 2em;
+a{
+    color: #438ba7;
 }
 
-/*make the header/quiz status text take up oppsite sides of the screen*/
+a:hover{
+    color: #38748b;
+}
+
 .quiz-status{
-    display: flex;  
-    flex-direction: row; 
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    list-style: none;
-    padding:20px 10px;
 }
 
+p.status{
+    font-size: 1em;
+    font-weight: bold;
+}
+/*style the first word of the status headings differently so they stand out*/
+.status span{
+    color: #438ba7;
+    font-weight: 1100;
+}
 
-/*center the questions and answers section and don't take up the whole screen*/
-.questions-and-answers{
-    margin: auto;
+header{
+    padding: 10px 10px 0px 10px;
+  }
+
+/*center contents and take up less horizontal width*/
+main{
     width: 75%;
-    padding: 50px 0px;
-}
-
-/*center the headings in the questions */ 
-.questions-and-answers h2, h3, p{
-    text-align: center;
-}
-
-/*center the button. could do this and the above in the questions-and-answers class,
-but then the li would be centered, which doesn't look good*/
-input[type=submit]{
-    display: block;
     margin: auto;
 }
 
-#headerImg{
-    display: inline-block;
-    text-align: center;
-    width: 100%; /*it won't center unless I do this?*/
+.questions-and-answers{
+    padding: 50px 10px 5px 10px;
 }
 
+/*add some styling to questions to make them more clear to user*/
+.question{
+    text-decoration: underline;
+    text-decoration-color: #59b9df;
+    padding-bottom: 20px; /*separate answer a bit from question*/
+}
+
+/*make submit button clear to user*/
+input[type=submit]{
+    margin-top: 10px; /*separate buttons a bit from text*/
+    width: 50%;
+    padding: 5px 0px;
+    border: 1px solid #52aace;
+    background-color: #52aace;
+    color: white;
+}
+
+input[type=submit]:hover{
+    margin-top: 10px; /*separate buttons a bit from text*/
+    width: 50%;
+    padding: 5px 0px;
+    border: 1px solid #438ba7;
+    background-color: #438ba7;
+}

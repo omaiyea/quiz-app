@@ -6,9 +6,10 @@ function renderQuizStart(){
     //start user's score and question count at 0
     QUESTION_COUNT = 1;
     QUESTIONS_RIGHT = 0;
-    $('.js-question').html(HEADER_IMAGE);
-    $('.js-question').append(WELCOME_MESSAGE);
-    $('.js-question').append(START_BUTTON);
+    $('.question').html(HEADER_IMAGE);
+    $('.question').append(WELCOME_HEADER);
+    $('.answer').html(WELCOME_MESSAGE);
+    $('.answer').append(START_BUTTON);
 }
 
 //iterates through the questions & answers based on the number of the question (QUESTION_COUNT) that the user is on
@@ -19,24 +20,31 @@ function handleNextQuestion(){
         event.preventDefault();
         console.log('handleNextQuestion ran');
         if(QUESTION_COUNT <= MAX_QUESTIONS){
-            $('.js-question').html(`
-                <h3>Question ${QUESTION_COUNT}</h3>
+            $('.question').html(`
+                ${(QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].icon)}
                 <h2>${(QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].question)}</h2>`);
-            $('.js-answer').html(generateFormHTML());
+            $('.answer').html(generateFormHTML());
             handleQuizStatus();
         }else{
             $('.quiz-status').html(''); //remove question status header
-            $('.js-question').html(`<h2>You got ${QUESTIONS_RIGHT}/${MAX_QUESTIONS} right!</h2>`);
-            $('.js-answer').html(`<p>Want to try again?</p>`);
-            $('.js-answer').append(REDO_BUTTON); //onclick in button reloads page
+            $('.question').html(FINAL_IMAGE);
+            $('.question').append(`<h2>You got ${QUESTIONS_RIGHT}/${MAX_QUESTIONS} right!</h2>`);
+            if(QUESTIONS_RIGHT == MAX_QUESTIONS){
+                $('.answer').html(ALL_RIGHT);
+            }else if(QUESTIONS_RIGHT >= Math.round(MAX_QUESTIONS)/2){ //if over half of answers are right
+                $('.answer').html(MOST_RIGHT);
+            }else{
+                $('.answer').html(MOST_WRONG); //if most answers were wrong
+            }
+            $('.answer').append(REDO); //onclick in button reloads page
         }
     }));
 }
 
 //header letting user know what question they're on, how many questions are left, and how many they've gotten right
 function handleQuizStatus(){
-    $('.quiz-status').html(`<sub>You're on question ${QUESTION_COUNT} out of ${MAX_QUESTIONS}</sub>
-    <sub>You've got ${QUESTIONS_RIGHT} out of ${MAX_QUESTIONS} correct</sub>`);
+    $('.quiz-status').html(`<p class="status"><span>Question: </span>${QUESTION_COUNT} out of ${MAX_QUESTIONS}</p>
+    <p class="status"><span>Score: </span>${QUESTIONS_RIGHT} out of ${MAX_QUESTIONS}</p>`);
 }
 
 //returns HTML form containing the list of answers for that question 
@@ -65,17 +73,15 @@ function handleAnswer(){
     if(userAnswer == QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].correctAnswerIndex){
         QUESTIONS_RIGHT++; 
         handleQuizStatus(); //rerun this to update the number of questions user has answered correctly
-        $('.js-answer').html(`<i class="fas fa-check-circle fa-2x" alt="correct icon"> ${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].potentialAnswers[userAnswer]}</i>
-        <br><h3>Correct!</h3>`);
+        $('.answer').html(`<h3>"${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].potentialAnswers[userAnswer]}" is CORRECT!</h3>`);
     }else{
-        $('.js-answer').html(`<i class="fas fa-times-circle fa-2x"> ${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].potentialAnswers[userAnswer]}</i>
-        <br><h3>Wrong!</h3>`);
+        $('.answer').html(`<h3>"${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].potentialAnswers[userAnswer]}" is WRONG!</h3>`);
     }
         
     //why correct answer is correct
-    $('.js-answer').append(`${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].explanation}`);
+    $('.answer').append(`${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].explanation}`);
 
-    $('.js-answer').append(NEXT_BUTTON);
+    $('.answer').append(NEXT_BUTTON);
 
     //currently this can go over the max number of questions to help with iteration logic but there are steps above so that this gets reset and overage isn't displayed to user
     QUESTION_COUNT++;
