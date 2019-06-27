@@ -91,13 +91,16 @@ main{
 /*can take up less horizontal space on larger screen*/
 /*also style header differently since there's more space */
 @media screen and (min-width: 600px){
-    main{
+  /*  main{
         width: 75%;
-    }
+    }*/
+
+    /* for some reason this isnt getting respected on actual mobile devices, just
+    when resizing a large window down, so uncommenting for now
     .quiz-status{
         flex-direction: row;
         justify-content: space-between;
-    }
+    }*/
     .questions-and-answers{
         padding: 50px 10px 5px 10px;
     }
