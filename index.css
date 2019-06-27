@@ -23,7 +23,7 @@ p{
 }
 
 input, label{
-    font-size: 30px; /* not large on mobile unless px is used? */ 
+    font-size: 1.5em;
 }
 
 a{
@@ -56,7 +56,7 @@ label{
 /*make submit button clear to user*/
 input[type=submit]{
     margin-top: 10px; /*separate buttons a bit from text*/
-    width: 50%;
+    width: 75%;
     padding: 5px 0px;
     border: 1px solid #52aace;
     background-color: #52aace;
@@ -65,7 +65,7 @@ input[type=submit]{
 
 input[type=submit]:hover{
     margin-top: 10px; /*separate buttons a bit from text*/
-    width: 50%;
+    width: 75%;
     padding: 5px 0px;
     border: 1px solid #438ba7;
     background-color: #438ba7;
@@ -80,7 +80,7 @@ input[type=submit]:hover{
 
 /*center contents and take up less horizontal width*/
 main{
-    width: 100%;
+    width: 95%;
     margin: auto;
 }
 
@@ -97,6 +97,9 @@ main{
 
     .questions-and-answers{
         padding: 50px 10px 5px 10px;
+    }
+    input[type=submit], input[type=submit]:hover{
+        width: 50%;
     }
 }
 
