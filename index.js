@@ -28,11 +28,11 @@ function handleNextQuestion(){
             $('.js-icon').html(FINAL_IMAGE);
             $('.js-question-and-answer').html(`<h2>You got ${QUESTIONS_RIGHT}/${MAX_QUESTIONS} right!</h2>`);
             if(QUESTIONS_RIGHT == MAX_QUESTIONS){
-                $('.js-question-and-answer').html(ALL_RIGHT);
+                $('.js-question-and-answer').append(ALL_RIGHT);
             }else if(QUESTIONS_RIGHT >= Math.round(MAX_QUESTIONS)/2){ //if over half of answers are right
-                $('.js-question-and-answer').html(MOST_RIGHT);
+                $('.js-question-and-answer').append(MOST_RIGHT);
             }else{
-                $('.js-question-and-answer').html(MOST_WRONG); //if most answers were wrong
+                $('.js-question-and-answer').append(MOST_WRONG); //if most answers were wrong
             }
             $('.js-question-and-answer').append(REDO); //onclick in button reloads page
         }
