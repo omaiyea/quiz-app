@@ -35,7 +35,7 @@ a:hover{
 }
 
 p.status{
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: bold;
 }
 
@@ -91,9 +91,9 @@ main{
 /*can take up less horizontal space on larger screen*/
 /*also style header differently since there's more space */
 @media screen and (min-width: 600px){
-  /*  main{
+    main{
         width: 75%;
-    }*/
+    }
 
     /* for some reason this isnt getting respected on actual mobile devices, just
     when resizing a large window down, so uncommenting for now
