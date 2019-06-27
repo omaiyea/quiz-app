@@ -34,17 +34,11 @@ a:hover{
     color: #38748b;
 }
 
-
-.quiz-status{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 p.status{
     font-size: 1em;
     font-weight: bold;
 }
+
 /*style the first word of the status headings differently so they stand out*/
 .status span{
     color: #438ba7;
@@ -54,16 +48,6 @@ p.status{
 header{
     padding: 10px 10px 0px 10px;
   }
-
-/*center contents and take up less horizontal width*/
-main{
-    width: 75%;
-    margin: auto;
-}
-
-.questions-and-answers{
-    padding: 50px 10px 5px 10px;
-}
 
 label{
     display: block;
@@ -88,16 +72,34 @@ input[type=submit]:hover{
     cursor: pointer;
 }
 
-/*don't need as much padding on small screens*/
-/*also style header differently since there's less space */
-@media screen and (max-width: 500px){
+/*style the following elements for mobile first, where there's less whitespace*/
+.quiz-status{
+    display: flex;
+    flex-direction: column;
+}
+
+/*center contents and take up less horizontal width*/
+main{
+    width: 100%;
+    margin: auto;
+}
+
+.questions-and-answers{
+    padding: 50px 0px 5px 0px;
+}
+
+/*can take up less horizontal space on larger screen*/
+/*also style header differently since there's more space */
+@media screen and (min-width: 600px){
     main{
-        width: 100%;
+        width: 75%;
     }
     .quiz-status{
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
     }
     .questions-and-answers{
-        padding: 50px 0px 5px 0px;
+        padding: 50px 10px 5px 10px;
     }
 }
+
