@@ -12,4 +12,4 @@ The actual quiz is available to take on GitHub Pages: https://omaiyea.github.io/
 * The concepts the user is quizzed on are really basic since the target audience is broad. Could present questions progressively harder. 
 * Read questions and answers from a file for easier maintenance. 
 * Automated testing, including for regressions.
- 
+* Larger text on mobile. 
