@@ -8,14 +8,16 @@
 }
 
 /*make the text bigger for ease of reading*/
-h2{
+
+/*also style the headers and questions so they're clear */
+h2, legend{
     font-size: 2.5em;
     font-weight: 1000;
+    text-decoration: underline;
+    text-decoration-color: #59b9df;
+    padding-bottom: 20px; /*separate answer a bit from question*/
 }
-h3{
-    font-size: 2em;
-    font-weight: 1000;
-}
+
 p, input, label{
     font-size: 1.5em;
 }
@@ -54,15 +56,19 @@ main{
     margin: auto;
 }
 
+/*don't need as much padding on small screens*/
+@media screen and (max-width: 600px){
+    main{
+        width: 95%;
+    }
+}
+
 .questions-and-answers{
     padding: 50px 10px 5px 10px;
 }
 
-/*add some styling to questions to make them more clear to user*/
-.question{
-    text-decoration: underline;
-    text-decoration-color: #59b9df;
-    padding-bottom: 20px; /*separate answer a bit from question*/
+label{
+    display: block;
 }
 
 /*make submit button clear to user*/
@@ -81,4 +87,5 @@ input[type=submit]:hover{
     padding: 5px 0px;
     border: 1px solid #438ba7;
     background-color: #438ba7;
+    cursor: pointer;
 }

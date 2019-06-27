@@ -6,10 +6,10 @@ function renderQuizStart(){
     //start user's score and question count at 0
     QUESTION_COUNT = 1;
     QUESTIONS_RIGHT = 0;
-    $('.question').html(HEADER_IMAGE);
-    $('.question').append(WELCOME_HEADER);
-    $('.answer').html(WELCOME_MESSAGE);
-    $('.answer').append(START_BUTTON);
+    $('.js-icon').html(HEADER_IMAGE);
+    $('.js-question-and-answer').html(WELCOME_HEADER);
+    $('.js-question-and-answer').append(WELCOME_MESSAGE);
+    $('.js-question-and-answer').append(START_BUTTON);
 }
 
 //iterates through the questions & answers based on the number of the question (QUESTION_COUNT) that the user is on
@@ -20,23 +20,21 @@ function handleNextQuestion(){
         event.preventDefault();
         console.log('handleNextQuestion ran');
         if(QUESTION_COUNT <= MAX_QUESTIONS){
-            $('.question').html(`
-                ${(QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].icon)}
-                <h2>${(QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].question)}</h2>`);
-            $('.answer').html(generateFormHTML());
+            $('.js-icon').html(`${(QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].icon)}`);
+            $('.js-question-and-answer').html(generateFormHTML());
             handleQuizStatus();
         }else{
             $('.quiz-status').html(''); //remove question status header
-            $('.question').html(FINAL_IMAGE);
-            $('.question').append(`<h2>You got ${QUESTIONS_RIGHT}/${MAX_QUESTIONS} right!</h2>`);
+            $('.js-icon').html(FINAL_IMAGE);
+            $('.js-question-and-answer').html(`<h2>You got ${QUESTIONS_RIGHT}/${MAX_QUESTIONS} right!</h2>`);
             if(QUESTIONS_RIGHT == MAX_QUESTIONS){
-                $('.answer').html(ALL_RIGHT);
+                $('.js-question-and-answer').html(ALL_RIGHT);
             }else if(QUESTIONS_RIGHT >= Math.round(MAX_QUESTIONS)/2){ //if over half of answers are right
-                $('.answer').html(MOST_RIGHT);
+                $('.js-question-and-answer').html(MOST_RIGHT);
             }else{
-                $('.answer').html(MOST_WRONG); //if most answers were wrong
+                $('.js-question-and-answer').html(MOST_WRONG); //if most answers were wrong
             }
-            $('.answer').append(REDO); //onclick in button reloads page
+            $('.js-question-and-answer').append(REDO); //onclick in button reloads page
         }
     }));
 }
@@ -50,15 +48,14 @@ function handleQuizStatus(){
 //returns HTML form containing the list of answers for that question 
 function generateFormHTML(){
     console.log('Generating form with answers');
-    let answersHTML = '<form class="js-answer-options">';
+    let questionAndAndswerHTML = `<form class="js-answer-options">
+    <legend>${(QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].question)}</legend>`;
     for(ansIterator = 0; ansIterator < MAX_ANSWERS; ansIterator++){
-       answersHTML += `
-        <label><input type="radio" name="${QUESTION_COUNT}" value="${ansIterator}" required="required">
-            ${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].potentialAnswers[ansIterator]}
-        </label><br>`;
+        questionAndAndswerHTML += `
+        <label><input type="radio" name="${QUESTION_COUNT}" value="${ansIterator}" required="required"> ${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].potentialAnswers[ansIterator]}</label>`;
     }
-    answersHTML += '<input type="submit" value="Submit Answer"></form>';
-    return answersHTML;
+    questionAndAndswerHTML += '<input type="submit" value="Submit Answer"></form>';
+    return questionAndAndswerHTML;
 }
 
 //tells user if they're right or wrong after they've answered the question
@@ -73,15 +70,15 @@ function handleAnswer(){
     if(userAnswer == QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].correctAnswerIndex){
         QUESTIONS_RIGHT++; 
         handleQuizStatus(); //rerun this to update the number of questions user has answered correctly
-        $('.answer').html(`<h3>"${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].potentialAnswers[userAnswer]}" is CORRECT!</h3>`);
+        $('.js-question-and-answer').html(`<h2>"${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].potentialAnswers[userAnswer]}" is CORRECT!</h2>`);
     }else{
-        $('.answer').html(`<h3>"${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].potentialAnswers[userAnswer]}" is WRONG!</h3>`);
+        $('.js-question-and-answer').html(`<h2>"${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].potentialAnswers[userAnswer]}" is WRONG!</h2>`);
     }
         
     //why correct answer is correct
-    $('.answer').append(`${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].explanation}`);
+    $('.js-question-and-answer').append(`${QUESTIONS_AND_ANSWERS[QUESTION_COUNT-1].explanation}`);
 
-    $('.answer').append(NEXT_BUTTON);
+    $('.js-question-and-answer').append(NEXT_BUTTON);
 
     //currently this can go over the max number of questions to help with iteration logic but there are steps above so that this gets reset and overage isn't displayed to user
     QUESTION_COUNT++;
