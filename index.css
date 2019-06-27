@@ -18,8 +18,12 @@ h2, legend{
     padding-bottom: 20px; /*separate answer a bit from question*/
 }
 
-p, input, label{
+p{
     font-size: 1.5em;
+}
+
+input, label{
+    font-size: 30px; /* not large on mobile unless px is used? */ 
 }
 
 a{
@@ -29,6 +33,7 @@ a{
 a:hover{
     color: #38748b;
 }
+
 
 .quiz-status{
     display: flex;
@@ -56,13 +61,6 @@ main{
     margin: auto;
 }
 
-/*don't need as much padding on small screens*/
-@media screen and (max-width: 600px){
-    main{
-        width: 95%;
-    }
-}
-
 .questions-and-answers{
     padding: 50px 10px 5px 10px;
 }
@@ -88,4 +86,18 @@ input[type=submit]:hover{
     border: 1px solid #438ba7;
     background-color: #438ba7;
     cursor: pointer;
+}
+
+/*don't need as much padding on small screens*/
+/*also style header differently since there's less space */
+@media screen and (max-width: 500px){
+    main{
+        width: 100%;
+    }
+    .quiz-status{
+        flex-direction: column;
+    }
+    .questions-and-answers{
+        padding: 50px 0px 5px 0px;
+    }
 }
