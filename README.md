@@ -1,4 +1,4 @@
-Quiz App
+Basic Science Quiz
 =======
 
 This app is a basic science quiz built to practice jQuery, JavaScript, Git, HTML, and CSS and keeping accessibility in mind.   
