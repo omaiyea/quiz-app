@@ -1,7 +1,7 @@
 Basic Science Quiz
 =======
 
-This app is a basic science quiz built mostly to practice jQuery, JavaScript, Git, HTML, & CSS, and partially to increase visibility of science.
+This app is a basic science quiz built mostly to practice jQuery, JavaScript, Git, HTML, & CSS, and partially to increase the visibility of science.
 
 ## Getting Started
 
