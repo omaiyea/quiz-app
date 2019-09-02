@@ -5,7 +5,7 @@ This is a basic science quiz built mostly to practice jQuery, JavaScript, Git, H
 
 ## Getting Started
 
-The actual quiz is available here: https://omaiyea.github.io/quiz-app/
+The quiz is available to take here: https://omaiyea.github.io/quiz-app/
 
 ## Future Enhancements
 
